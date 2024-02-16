@@ -12,7 +12,7 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 
 st.set_page_config(page_title="Prototype Chatbot")
-st.header("Indian Penal Code GPT")
+st.header("ELT CORPORATE PRIVATE GPT")
 
 @retry(stop_max_attempt_number=3,wait_fixed=1000)
 def get_gemini_response(question):
@@ -38,7 +38,7 @@ if submit_button and input_question:
 	st.subheader("The Response is")
 	
 	st.markdown(bot_response,unsafe_allow_html=True)
-	st.session_state['chat_history'].append(("IPC-GPT: ",bot_response))
+	st.session_state['chat_history'].append(("ELT-GPT: ",bot_response))
 
 st.subheader("The Chat History is")
 
