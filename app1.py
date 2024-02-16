@@ -12,7 +12,7 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 
 st.set_page_config(page_title="Prototype Chatbot")
-st.header("ELT CORPORATE PRIVATE GPT")
+st.title("ELT CORPORATE PRIVATE GPT")
 
 @retry(stop_max_attempt_number=3,wait_fixed=1000)
 def get_gemini_response(question):
