@@ -10,8 +10,8 @@ load_dotenv()
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 # Hardcoded credentials
-hardcoded_username = "your_username"
-hardcoded_password = "your_password"
+hardcoded_username = "ELT1"
+hardcoded_password = "ELT@200195"
 
 # Function to authenticate user
 def authenticate(username, password):
