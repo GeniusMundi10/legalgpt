@@ -1,4 +1,3 @@
-
 from dotenv import load_dotenv
 import streamlit as st
 import os
@@ -28,11 +27,7 @@ username = st.text_input("Username:")
 password = st.text_input("Password:", type="password")
 login_button = st.button("Login")
 
-
-#Login Section
-username = st.text_input("Username:")
-password = st.text_input("Password:", type="password")
-login_button = st.button("Login")
+3
 
 if login_button:
 	if authenticate(username,password):
