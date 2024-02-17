@@ -21,7 +21,7 @@ def authenticate(username, password):
 
 st.set_page_config(page_title="Prototype Chatbot")
 #st.title("Login Please")
-st,.placeholder =st.empty()
+st.placeholder =st.empty()
 
 #Login Section
 username = st.text_input("Username:")
