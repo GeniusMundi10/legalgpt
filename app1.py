@@ -19,20 +19,16 @@ def authenticate(username, password):
 
 
 
-st.set_page_config(page_title="Prototype Chatbot")
-#st.title("Login Please")
+st.set_page_config(page_title="ELT GENIE")
+st.title("Login Please")
 
 if 'authenticated' not in st.session_state:
 	st.session_state['authenticated'] = False
 
 if not st.session_state['authenticated']:
-	
-
 	username = st.text_input("Username:")
 	password = st.text_input("Password:", type="password")
 	login_button = st.button("Login")
-
-
 
 	if login_button:
 		if authenticate(username,password):
@@ -55,9 +51,9 @@ if st.session_state['authenticated']:
 			}
 	if 'chat_history' not in st.session_state:
 		st.session_state['chat_history']=[]
-
+	st.title('ELT GENIE)
 	input_question = st.text_input("Input: ",key="input")
-	submit_button = st.button("Ask the question")
+	submit_button = st.button("Make your wish")
 
 	if submit_button and input_question:
 		response = get_gemini_response(input_question)
