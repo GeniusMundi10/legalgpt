@@ -42,7 +42,7 @@ if not st.session_state['authenticated']:
 			st.error("Invalid Credentials. Please Try Again.")
 		#main_placeholder.title("ELT CORPORATE PRIVATE GPT")
 
-is st.session_state[''authenticated']:
+if st.session_state[''authenticated']:
 
 		#Retry Decorator
 	@retry(stop_max_attempt_number=3,wait_fixed=1000)
