@@ -51,7 +51,7 @@ if st.session_state['authenticated']:
 			}
 	if 'chat_history' not in st.session_state:
 		st.session_state['chat_history']=[]
-	st.title('ELT GENIE)
+	st.title('ELT GENIE')
 	input_question = st.text_input("Input: ",key="input")
 	submit_button = st.button("Make your wish")
 
