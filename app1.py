@@ -20,7 +20,8 @@ def authenticate(username, password):
 
 
 st.set_page_config(page_title="ELT GENIE")
-st.title("Login Please")
+#st.title("Login Please")
+st.title('ELT Genie 🧞‍♂️')
 
 if 'authenticated' not in st.session_state:
 	st.session_state['authenticated'] = False
@@ -51,7 +52,7 @@ if st.session_state['authenticated']:
 			}
 	if 'chat_history' not in st.session_state:
 		st.session_state['chat_history']=[]
-	st.title('ELT Genie 🧞‍♂️')
+	
 	#genie_image_url = "https://github.com/GeniusMundi10/streamlit-app-/main/genie-logo-design-magic-fantasy-concept-vector-28664468.jpg"
 	#st.image(genie_image_url,width=50)
 	
