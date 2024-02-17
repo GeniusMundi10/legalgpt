@@ -52,6 +52,9 @@ if st.session_state['authenticated']:
 	if 'chat_history' not in st.session_state:
 		st.session_state['chat_history']=[]
 	st.title('ELT GENIE')
+	genie_image_url = "https://github.com/GeniusMundi10/streamlit-app-/main/genie-logo-design-magic-fantasy-concept-vector-28664468.jpg"
+	st.image(genie_image_url,width=50)
+	
 	input_question = st.text_input("Input: ",key="input")
 	submit_button = st.button("Make your wish")
 
