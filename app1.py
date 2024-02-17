@@ -21,16 +21,14 @@ def authenticate(username, password):
 
 
 st.set_page_config(page_title="Prototype Chatbot")
-st.title("ELT CORPORATE PRIVATE GPT")
+st.title("Login Please")
 
-@retry(stop_max_attempt_number=3,wait_fixed=1000)
-def get_gemini_response(question):
-	model=genai.GenerativeModel("gemini-pro")
-	chat=model.start_chat(history=[])
-	response = chat.send_message(question,stream=True)
-	return {
-		"chunks": [response] if isinstance(response, str) else [chunk.text for chunk in response]
-	}
+#Login Section
+username = st.text_input("Username:")
+password = st.text_input("Password:", type="password")
+login_button = st.button("Login")
+
+
 #Login Section
 username = st.text_input("Username:")
 password = st.text_input("Password:", type="password")
@@ -38,7 +36,18 @@ login_button = st.button("Login")
 
 if login_button:
 	if authenticate(username,password):
-	# Only show chat interface if login is successful
+		st.success("Welcome Aboard")
+		st.title("ELT CORPORATE PRIVATE GPT")
+
+		
+		@retry(stop_max_attempt_number=3,wait_fixed=1000)
+		def get_gemini_response(question):
+			model=genai.GenerativeModel("gemini-pro")
+			chat=model.start_chat(history=[])
+			response = chat.send_message(question,stream=True)
+			return {
+				"chunks": [response] if isinstance(response, str) else [chunk.text for chunk in response]
+			}
 		if 'chat_history' not in st.session_state:
 			st.session_state['chat_history']=[]
 
@@ -54,7 +63,7 @@ if login_button:
 	
 			st.markdown(bot_response,unsafe_allow_html=True)
 			st.session_state['chat_history'].append(("ELT-GPT: ",bot_response))
-
+	
 		st.subheader("The Chat History is")
 
 		chat_history_text = ""
