@@ -20,8 +20,9 @@ def authenticate(username, password):
 
 
 st.set_page_config(page_title="Prototype Chatbot")
-#st.title("Login Please")
-st.placeholder =st.empty()
+st.title("Login Please")
+
+main_placeholder = st.empty()
 
 #Login Section
 username = st.text_input("Username:")
@@ -33,7 +34,7 @@ login_button = st.button("Login")
 if login_button:
 	if authenticate(username,password):
 		st.success("Welcome Aboard")
-		st.title("ELT CORPORATE PRIVATE GPT")
+		main_placeholder.title("ELT CORPORATE PRIVATE GPT")
 
 		#Retry Decorator
 		@retry(stop_max_attempt_number=3,wait_fixed=1000)
