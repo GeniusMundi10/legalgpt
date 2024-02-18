@@ -21,8 +21,8 @@ def authenticate(username, password):
 
 st.set_page_config(page_title="ELT GENIE")
 #st.title("Login Please")
-#st.title('ELT Genie 🧞‍♂️')
-st.title('Goju GPT 🧞‍♂️')
+st.title('ELT Genie 🧞‍♂️')
+
 
 if 'authenticated' not in st.session_state:
 	st.session_state['authenticated'] = False
